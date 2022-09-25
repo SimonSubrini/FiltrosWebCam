@@ -4,30 +4,62 @@
 <head>
     <title>Filtros</title>
     <style type="text/css">
-        #canvas {
+        .canvasClass {
             -moz-transform: scaleX(-1);
             -o-transform: scaleX(-1);
             -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
             filter: FlipH;
             -ms-filter: "FlipH";
+            padding: 0;
+            margin: auto;
+            display: block;
+            width: 400px;
         }
-        #canvasRes {
-            -moz-transform: scaleX(-1);
-            -o-transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-            filter: FlipH;
-            -ms-filter: "FlipH";
+
+        .divCanvas {
+            background-color: rgba(124, 235, 207, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 10px;
+        }
+
+        .camaras {
+            display: grid;
+            column-gap: 0px;
+            grid-template-columns: auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+            width: min-content;
         }
     </style>
 </head>
 
 <body>
     <video id="video" playsinline autoplay style="display: none;"></video>
-    <canvas id="canvas" width="475" height="475"></canvas>
-    <canvas id="canvasRes" width="475" height="475"></canvas>
+    <div class="camaras">
 
+        <div class="divCanvas">
+            <canvas id="canvas" class="canvasClass"></canvas>
+        </div>
+
+        <div class="divCanvas">
+            <canvas id="canvasR1" class="canvasClass"></canvas>
+        </div>
+
+        <div class="divCanvas">
+            <canvas id="canvasR2" class="canvasClass"></canvas>
+        </div>
+
+        <div class="divCanvas">
+            <canvas id="canvasR3" class="canvasClass"></canvas>
+        </div>
+
+    </div>
+
+
+    <div>
+        <text id="txt"></text>
+    </div>
     <script type="text/javascript">
         window.onload = function () {
             MostrarCamara();
